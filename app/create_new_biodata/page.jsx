@@ -1,8 +1,8 @@
 "use client";
 // pages/biodata.js
 import { useState } from "react";
-// import { push, ref, set } from "firebase/database";
-// import { database } from "@/lib/firebase";
+import { push, ref, set } from "firebase/database";
+import { database } from "@/lib/firebase";
 import SelectDivision from "@/components/selectDivision";
 import SelectMarriedStatus from "@/components/selectMarriedStatus";
 import SubmitWelcome from "./submitWelcomePage";
@@ -63,17 +63,17 @@ export default function BiodataForm() {
       extra: e.target[18].value,
     };
 
-    // try {
-    //   const usersRef = ref(database, "AllBiodata");
-    //   const newDataRef = await push(usersRef);
+     try {
+       const usersRef = ref(database, "AllBiodata");
+       const newDataRef = await push(usersRef);
 
-    //   set(newDataRef, FormDataObject);
+       set(newDataRef, FormDataObject);
     console.log(FormDataObject);
     e.preventDefault();
     setSubmitted(true);
-    // } catch (error) {
-    //   alert("Your Data is not submitted!!");
-    // }
+     } catch (error) {
+       alert("Your Data is not submitted!!");
+     }
   };
 
   return (
