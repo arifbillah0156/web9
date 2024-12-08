@@ -13,9 +13,9 @@ import FormInput from "./formInput";
 
 export default function BiodataForm() {
   const [submitted, setSubmitted] = useState(false);
-  const [boyOrGirl, setBoyOrGirl] = useState("");
-  const [marriedStatus, setMarriedStatus] = useState("unmarried");
-  const [division, setDivision] = useState("Dhaka");
+  const [boyOrGirl, setBoyOrGirl] = useState("পাত্র");
+  const [marriedStatus, setMarriedStatus] = useState("অবিবাহিত");
+  const [division, setDivision] = useState("ঢাকা");
   const [isChecked, setIsChecked] = useState(true);
 
   const options = [
